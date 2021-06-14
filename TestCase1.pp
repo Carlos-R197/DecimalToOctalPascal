@@ -16,6 +16,8 @@ type
   published
     procedure ZeroTest;
 	procedure OneDigitTest;
+	procedure OneNegativeDigitTest;
+	procedure ThreeDigitTest;
   end;
   
 implementation
@@ -28,6 +30,16 @@ end;
 procedure TTestCase1.OneDigitTest;
 begin
   AssertEquals(11, FConverter.Convert(9));  
+end;
+
+procedure TTestCase1.OneNegativeDigitTest;
+begin
+  AssertEquals(-11, FConverter.Convert(-9));  
+end;
+
+procedure TTestCase1.ThreeDigitTest;
+begin
+  AssertEquals(555, FConverter.Convert(365));  
 end;
   
 procedure TTestCase1.SetUp;
